@@ -12,13 +12,13 @@ $(function (){
     $.get("/products/" + id + "/description", function(desc){
       $("#description-" + id).text(desc);
     });
-    // $.get("/products/" + id + "/inventory", function(inv){
-    //     if (inv === true){
-    //         $("#inventory").append("<p>Available</p>")
-    //     } else {
-    //         $("#inventory").text("Out of Stock")
-    //     }
-    // });
+    $.get("/products/" + id + "/inventory", function(inv){
+        if (inv === true){
+            $("#inventory").append("<p>Available</p>")
+        } else {
+            $("#inventory").text("Out of Stock")
+        }
+    });
   });
 });
 </script>
